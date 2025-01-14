@@ -21,14 +21,34 @@ class Experience {
       required this.duration});
 }
 
-List<Experience> Experiences = [
+List<Experience> experiences = [
   Experience(
     role: 'Android Developer',
-    companyName: 'Prodigy InfoTech',
-    startTime: 'Aug 2024',
-    endTime: 'Sep 2024',
-    workType: 'Remote',
-    duration: '2 mos',
+    companyName: 'Resolute India Pvt.Ltd',
+    startTime: 'Dec 2023',
+    endTime: 'present',
+    workType: 'OnSite',
+    duration: '',
+    start: true,
+    end: true,
+  ),
+  Experience(
+    role: 'Flutter Developer Intern',
+    companyName: 'Camerin Folks Pvt. Ltd ',
+    startTime: 'July 27 2023',
+    endTime: 'December 14 2023',
+    workType: 'OnSite',
+    duration: '6 months',
+    start: true,
+    end: true,
+  ),
+  Experience(
+    role: 'Python Full Stack Intern',
+    companyName: 'Python Full Stack Intern ',
+    startTime: 'Jan 10 2023',
+    endTime: 'Apr 10 2023',
+    workType: 'OnSite',
+    duration: '3 months',
     start: true,
     end: true,
   ),

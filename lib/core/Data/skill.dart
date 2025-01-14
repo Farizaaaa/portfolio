@@ -16,7 +16,5 @@ List<String> skills = [
   'assets/svg/javascript.svg',
   'assets/svg/mysql.svg',
   'assets/svg/java.svg',
-  'assets/svg/blender.svg',
-  'assets/svg/figma.svg',
-  'assets/svg/framer.svg',
+  
 ];

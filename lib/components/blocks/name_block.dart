@@ -32,11 +32,11 @@ class NameBlock extends StatelessWidget {
               child: RichText(
                   text: TextSpan(children: [
                 TextSpan(
-                    text: "Nakul",
+                    text: "Fariza",
                     style:
                         GoogleFonts.chakraPetch(textStyle: textStyles.Name1)),
                 TextSpan(
-                    text: "</Dev>",
+                    text: "<A/A>",
                     style:
                         GoogleFonts.chakraPetch(textStyle: textStyles.Name2)),
               ])),

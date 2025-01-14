@@ -19,7 +19,7 @@ class EducationBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 523.2,
+      height: deviceHeight / 4,
       child: CustomBackdropFilter(
         borderRadius: containerStyle.borderRadius,
         margin: containerStyle.margin,
