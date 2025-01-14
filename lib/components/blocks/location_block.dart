@@ -44,29 +44,7 @@ class LocationBlock extends StatelessWidget {
                 child: RichText(
                   text: TextSpan(
                     children: [
-                      TextSpan(
-                        text: "\nFlutter",
-                        style: GoogleFonts.chakraPetch(textStyle: textStyles.I),
-                      ),
-                      TextSpan(
-                        text: " Developer     ",
-                        style: GoogleFonts.chakraPetch(textStyle: textStyles.B),
-                      ),
-                      TextSpan(
-                        text: "\nB.E ",
-                        style: GoogleFonts.chakraPetch(
-                            textStyle: textStyles.B, fontSize: 20),
-                      ),
-                      TextSpan(
-                        text: "CSE",
-                        style: GoogleFonts.chakraPetch(
-                            textStyle: textStyles.I, fontSize: 20),
-                      ),
-                      TextSpan(
-                        text: " Student",
-                        style: GoogleFonts.chakraPetch(
-                            textStyle: textStyles.B, fontSize: 20),
-                      ),
+                     
                       TextSpan(
                         text: "\nKerala",
                         style: GoogleFonts.chakraPetch(

@@ -45,18 +45,10 @@ class DesignationBlock extends StatelessWidget {
                   children: [
                     TextSpan(
                       text: "Flutter",
-                      style: GoogleFonts.chakraPetch(textStyle: textStyles.B),
-                    ),
-                    TextSpan(
-                      text: " Developer ",
-                      style: GoogleFonts.chakraPetch(textStyle: textStyles.B),
-                    ),
-                    TextSpan(
-                      text: "Code",
                       style: GoogleFonts.chakraPetch(textStyle: textStyles.I),
                     ),
                     TextSpan(
-                      text: "\nat a Time",
+                      text: " Developer ",
                       style: GoogleFonts.chakraPetch(textStyle: textStyles.B),
                     ),
                   ],
