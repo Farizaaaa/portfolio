@@ -19,7 +19,7 @@ class ExperienceBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 154.4,
+      height: deviceHeight / 1.5,
       child: CustomBackdropFilter(
         borderRadius: containerStyle.borderRadius,
         margin: containerStyle.margin,
@@ -75,11 +75,11 @@ class ExperienceBlock extends StatelessWidget {
                 child: ScrollConfiguration(
                   behavior: const ScrollBehavior().copyWith(scrollbars: false),
                   child: ListView.builder(
-                    itemCount: Experiences.length,
+                    itemCount: experiences.length,
                     itemBuilder: (context, index) {
                       return TimelineTile(
-                        isFirst: Experiences[index].start,
-                        isLast: Experiences[index].end,
+                        isFirst: experiences[index].start,
+                        isLast: experiences[index].end,
                         afterLineStyle: LineStyle(
                           thickness: 2,
                           color: EducationcontainerStyle.color,
@@ -112,7 +112,7 @@ class ExperienceBlock extends StatelessWidget {
                                 FittedBox(
                                   fit: BoxFit.scaleDown,
                                   child: Text(
-                                    Experiences[index].role,
+                                    experiences[index].role,
                                     style: GoogleFonts.chakraPetch(
                                         textStyle: textStyles.edu_H_B),
                                   ),
@@ -122,7 +122,7 @@ class ExperienceBlock extends StatelessWidget {
                                   child: Row(
                                     children: [
                                       Text(
-                                        Experiences[index].startTime,
+                                        experiences[index].startTime,
                                         style: GoogleFonts.chakraPetch(
                                             textStyle: textStyles.edu_P_L),
                                       ),
@@ -132,7 +132,7 @@ class ExperienceBlock extends StatelessWidget {
                                             textStyle: textStyles.edu_P_L),
                                       ),
                                       Text(
-                                        Experiences[index].endTime,
+                                        experiences[index].endTime,
                                         style: GoogleFonts.chakraPetch(
                                             textStyle: textStyles.edu_P_L),
                                       ),
@@ -142,7 +142,7 @@ class ExperienceBlock extends StatelessWidget {
                                             textStyle: textStyles.edu_P_L),
                                       ),
                                       Text(
-                                        Experiences[index].duration,
+                                        experiences[index].duration,
                                         style: GoogleFonts.chakraPetch(
                                             textStyle: textStyles.edu_P_L),
                                       ),
@@ -157,7 +157,7 @@ class ExperienceBlock extends StatelessWidget {
                                       // color: Colors.amber,
                                       width: deviceWidth * 0.1,
                                       child: Text(
-                                        Experiences[index].companyName,
+                                        experiences[index].companyName,
                                         style: GoogleFonts.chakraPetch(
                                             textStyle: textStyles.edu_P_N),
                                       ),
