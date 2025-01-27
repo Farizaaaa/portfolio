@@ -2,9 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/components/custom_backdrop_filter.dart';
-import 'package:portfolio/components/download_resume.dart';
-import 'package:portfolio/components/notify_snackbar.dart';
 import 'package:portfolio/core/styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ResumeBlock extends StatelessWidget {
   const ResumeBlock({
@@ -16,17 +15,27 @@ class ResumeBlock extends StatelessWidget {
   final String rurl;
   final double deviceWidth;
 
+  // Function to launch the URL
+  Future<void> _launchURL() async {
+    final Uri url = Uri.parse(
+        'https://github.com/Farizaaaa/resume/blob/main/Fariza_A_A%20(2).pdf');
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      print('Could not launch $url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 112.3,
       child: GestureDetector(
         onTap: () {
-          downloadResume(rurl);
-          notifySnackBar(context, "My Resume Will Be Downloaded Shortly");
+          _launchURL(); // Launch resume URL on tap
         },
         child: MouseRegion(
-          cursor: SystemMouseCursors.click,
+          cursor: SystemMouseCursors.click, // Change cursor on hover
           child: CustomBackdropFilter(
             borderRadius: containerStyle.borderRadius,
             margin: containerStyle.margin,
@@ -36,42 +45,42 @@ class ResumeBlock extends StatelessWidget {
                 borderRadius: containerStyle.borderRadius,
               ),
               padding: containerStyle.padding,
-              // margin: containerStyle.margin,
               width: deviceWidth * containerStyle.width,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment:
+                    MainAxisAlignment.center, // Center content vertically
+                crossAxisAlignment:
+                    CrossAxisAlignment.center, // Center content horizontally
                 children: [
-                  Icon(
-                    color: textStyles.B.color,
-                    Icons.download_rounded,
-                    size: deviceWidth * 0.014,
-                  ),
+                 
+                  const SizedBox(
+                      height: 8.0), // Add spacing between icon and text
                   Row(
+                    mainAxisAlignment:
+                        MainAxisAlignment.center, // Center text horizontally
                     children: [
-                      Expanded(
-                        child: AutoSizeText.rich(
-                          maxFontSize: 23,
-                          minFontSize: 5,
-                          maxLines: 1,
-                          TextSpan(
-                            children: [
-                              TextSpan(
-                                text: "My ",
-                                style: GoogleFonts.chakraPetch(
-                                    textStyle: textStyles.HeadingB,
-                                    color: Colors.black),
+                      // No need for Expanded here, just let the text widget take its natural size
+                      AutoSizeText.rich(
+                        maxFontSize: 23,
+                        minFontSize: 5,
+                        maxLines: 1,
+                        TextSpan(
+                          children: [
+                            TextSpan(
+                              text: "My ",
+                              style: GoogleFonts.chakraPetch(
+                                textStyle: textStyles.HeadingB,
+                                color: Colors.black,
                               ),
-                              TextSpan(
-                                text: "Resume",
-                                style: GoogleFonts.chakraPetch(
-                                  textStyle: textStyles.HeadingI,
-                                  color: Colors.black,
-                                  // backgroundColor: const Color.fromARGB(255, 119, 119, 119)
-                                ),
+                            ),
+                            TextSpan(
+                              text: "Resume",
+                              style: GoogleFonts.chakraPetch(
+                                textStyle: textStyles.HeadingI,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ],

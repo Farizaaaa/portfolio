@@ -5,6 +5,7 @@ import 'package:portfolio/components/custom_backdrop_filter.dart';
 import 'package:portfolio/components/navigate.dart';
 import 'package:portfolio/core/Data/projects.dart';
 import 'package:portfolio/core/styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectsBlock extends StatelessWidget {
   const ProjectsBlock({
@@ -87,9 +88,18 @@ class ProjectsBlock extends StatelessWidget {
                 child: ListView.builder(
                     itemCount: projects.length,
                     itemBuilder: (context, index) {
+                      Future<void> launchURL() async {
+                        final Uri url = Uri.parse(projects[index].githubLink);
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url);
+                        } else {
+                          print('Could not launch $url');
+                        }
+                      }
+
                       return GestureDetector(
                         onTap: () {
-                          navigateTo(context, Container());
+                          launchURL();
                         },
                         child: MouseRegion(
                           cursor: SystemMouseCursors.click,

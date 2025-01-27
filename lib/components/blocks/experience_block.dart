@@ -88,8 +88,10 @@ class ExperienceBlock extends StatelessWidget {
                           thickness: 2,
                           color: EducationcontainerStyle.color,
                         ),
+
                         indicatorStyle: IndicatorStyle(
                           color: EducationcontainerStyle.color,
+
                           iconStyle: IconStyle(
                               color: Colors.white,
                               fontSize: 25,
@@ -124,7 +126,7 @@ class ExperienceBlock extends StatelessWidget {
                                       Text(
                                         experiences[index].startTime,
                                         style: GoogleFonts.chakraPetch(
-                                            textStyle: textStyles.edu_P_L),
+                                            textStyle: textStyles.edu_H_B),
                                       ),
                                       Text(
                                         ' - ',

@@ -63,7 +63,10 @@ class _HomeScreenDesktopState extends State<HomeScreenDesktop> {
                         Column(
                           children: [
                             NameBlock(deviceWidth: deviceWidth),
-                            ProfilePhotoBlock(deviceWidth: deviceWidth),
+                            ProfilePhotoBlock(
+                              deviceWidth: deviceWidth,
+                              deviceHeight: deviceHeight,
+                            ),
                             ContactMeBlock(deviceWidth: deviceWidth),
                           ],
                         ),

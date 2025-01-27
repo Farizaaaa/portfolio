@@ -7,29 +7,33 @@ class ProfilePhotoBlock extends StatelessWidget {
   const ProfilePhotoBlock({
     super.key,
     required this.deviceWidth,
+    required this.deviceHeight
   });
 
   final double deviceWidth;
-
+final double deviceHeight;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 340.8,
+      height: deviceHeight / 2,
+      width: deviceWidth / 5,
       child: CustomBackdropFilter(
         borderRadius: containerStyle.borderRadius,
         margin: containerStyle.margin,
         child: Container(
+          height: deviceHeight / 6,
+      
           decoration: BoxDecoration(
             color: containerStyle.color,
             borderRadius: containerStyle.borderRadius,
             image: const DecorationImage(
               image: AssetImage(profilepic),
-              fit: BoxFit.fitHeight,
+              fit: BoxFit.fill,
             ),
           ),
           padding: containerStyle.padding,
           // margin: containerStyle.margin,
-          width: deviceWidth * containerStyle.width,
+          width: deviceWidth / 6,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.end,

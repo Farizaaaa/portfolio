@@ -55,7 +55,7 @@ List<Project> projects = [
     dartSvg: "assets/svg/dart.svg",
     keyFeatures: "• Deletion \n• Simple UI",
     githubLink:
-        "https://github.com/Farizaaaa/ecommerseproject_yoga_website/tree/master",
+        "https://github.com/Farizaaaa/flutter_todoapp_hive_getx",
     demoVideoLink: "https://tic-tac-toe-game-app-2024.netlify.app/",
     screenshot1: "assets/ss/first.png",
     screenshot2: "assets/ss/second.png",

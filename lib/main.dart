@@ -10,9 +10,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const MaterialApp(
+    return MaterialApp(
+        title: "Fariza A A",
+        theme: ThemeData(
+          colorScheme: const ColorScheme.dark(),
+        ),
+      
       debugShowCheckedModeBanner: false,
-      home:HomeScreenLayoutBuilder()
+        home: const HomeScreenLayoutBuilder()
     );
   }
 }
