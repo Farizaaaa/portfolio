@@ -6,8 +6,8 @@ import 'package:portfolio/components/custom_backdrop_filter.dart';
 import 'package:portfolio/core/Data/skill.dart';
 import 'package:portfolio/core/styles.dart';
 
-class SkillsBlock extends StatelessWidget {
-  const SkillsBlock({
+class SkillsBlockDesktop extends StatelessWidget {
+  const SkillsBlockDesktop({
     super.key,
     required this.deviceWidth,
     required this.deviceHeight,
@@ -94,7 +94,7 @@ class SkillsBlock extends StatelessWidget {
                         child: Center(
                           child: SvgPicture.asset(
                             skills[index],
-                            // color: textStyles.B.color,
+                             
                             width: deviceWidth * 0.06,
                             height: deviceHeight * 0.06,
                           ),
@@ -107,6 +107,167 @@ class SkillsBlock extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+class SkillsBlockMobile extends StatelessWidget {
+  final double deviceWidth;
+  final double deviceHeight;
+  const SkillsBlockMobile(
+      {super.key, required this.deviceWidth, required this.deviceHeight});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: mobile_containerStyle.color,
+        borderRadius: mobile_containerStyle.borderRadius,
+      ),
+      padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 16),
+      width: deviceWidth * mobile_containerStyle.width,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: AutoSizeText.rich(
+                  maxFontSize: 23,
+                  minFontSize: 5,
+                  maxLines: 1,
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Tech I',
+                        style: GoogleFonts.chakraPetch(
+                            textStyle: textStyles.HeadingI),
+                      ),
+                      TextSpan(
+                        text: ' Love',
+                        style: GoogleFonts.chakraPetch(
+                            textStyle: textStyles.HeadingB),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Icon(
+                color: textStyles.B.color,
+                Icons.lens_blur_rounded,
+                size: deviceWidth * mobile_containerStyle.iconSize,
+              )
+            ],
+          ),
+          SizedBox(
+            height: deviceHeight * 0.015,
+          ),
+          SizedBox(
+            height: 120,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: deviceWidth * mobile_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[0],
+                          width: deviceWidth * mobile_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * mobile_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[1],
+                          width: deviceWidth * mobile_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * mobile_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[2],
+                          width: deviceWidth * mobile_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * mobile_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[3],
+                          width: deviceWidth * mobile_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * mobile_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[4],
+                          width: deviceWidth * mobile_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * mobile_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[5],
+                          width: deviceWidth * mobile_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: deviceWidth * mobile_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[6],
+                          width: deviceWidth * mobile_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * mobile_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[7],
+                          width: deviceWidth * mobile_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * mobile_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[8],
+                          width: deviceWidth * mobile_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

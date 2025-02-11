@@ -13,7 +13,7 @@ class CursorTracker extends StatefulWidget {
     super.key,
     required this.child,
     this.delayFactors = const [0.1, 0.2, 0.4],
-    this.circleSizes = const [170, 64, 15], // Sizes for circles
+    this.circleSizes = const [205, 20, 10], // Sizes for circles
     this.gradientDuration = const Duration(seconds: 30), // Default duration
   }) : assert(delayFactors.length == circleSizes.length,
             'Mismatch in delay factors and circle sizes.');

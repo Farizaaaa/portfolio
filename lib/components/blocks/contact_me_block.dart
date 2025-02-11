@@ -2,8 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/components/custom_backdrop_filter.dart';
-import 'package:portfolio/components/navigate.dart';
 import 'package:portfolio/core/styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactMeBlock extends StatelessWidget {
   const ContactMeBlock({
@@ -13,13 +13,22 @@ class ContactMeBlock extends StatelessWidget {
 
   final double deviceWidth;
 
+  Future<void> _launchURL() async {
+    final Uri url = Uri.parse("https://linkedin.com/in/fariza-a-a-661820253");
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      print('Could not launch $url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 240.5,
       child: GestureDetector(
         onTap: () {
-          navigateTo(context, Container());
+          _launchURL();
         },
         child: MouseRegion(
           cursor: SystemMouseCursors.click,
@@ -32,16 +41,16 @@ class ContactMeBlock extends StatelessWidget {
                 borderRadius: containerStyle.borderRadius,
               ),
               padding: containerStyle.padding,
-              // margin: containerStyle.margin,
               width: deviceWidth * containerStyle.width,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
+                  // First Row
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(
+                      Flexible(
                         child: AutoSizeText(
                           "Have some\nQuestions?",
                           maxLines: 3,
@@ -58,9 +67,10 @@ class ContactMeBlock extends StatelessWidget {
                       ),
                     ],
                   ),
+                  // Second Row
                   Row(
                     children: [
-                      Expanded(
+                      Flexible(
                         child: AutoSizeText.rich(
                           maxFontSize: 23,
                           minFontSize: 5,

@@ -8,17 +8,17 @@ import 'package:url_launcher/url_launcher.dart';
 class ResumeBlock extends StatelessWidget {
   const ResumeBlock({
     super.key,
-    required this.rurl,
+  
     required this.deviceWidth,
   });
 
-  final String rurl;
+ 
   final double deviceWidth;
 
   // Function to launch the URL
   Future<void> _launchURL() async {
     final Uri url = Uri.parse(
-        'https://github.com/Farizaaaa/resume/blob/main/Fariza_A_A%20(2).pdf');
+        'https://github.com/Farizaaaa/resume/blob/main/Fariza_A_A.pdf');
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {
@@ -48,7 +48,7 @@ class ResumeBlock extends StatelessWidget {
               width: deviceWidth * containerStyle.width,
               child: Column(
                 mainAxisAlignment:
-                    MainAxisAlignment.center, // Center content vertically
+                    MainAxisAlignment.center, // Center content verticallys
                 crossAxisAlignment:
                     CrossAxisAlignment.center, // Center content horizontally
                 children: [

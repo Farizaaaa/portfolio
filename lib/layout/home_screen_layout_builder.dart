@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/components/animated_blob.dart';
 import 'package:portfolio/components/mouse_tracker.dart';
-import 'package:portfolio/components/navigation_bar.dart';
 import 'package:portfolio/components/responsive_layout.dart';
 import 'package:portfolio/screens/home_screen/home_screen_desktop.dart';
+import 'package:portfolio/screens/home_screen/home_screen_mobile.dart';
 
 class HomeScreenLayoutBuilder extends StatelessWidget {
   final int currentIndex;
@@ -19,14 +19,10 @@ class HomeScreenLayoutBuilder extends StatelessWidget {
         blobSizeMultiplier: 1,
         orbitRadius: 0.2,
         child: CursorTracker(
-          child: NavigationWrapper(
-            showNavBar: false,
-            currentIndex: currentIndex,
-            child:  ResponsiveLayout(
-              desktopBody: const HomeScreenDesktop(),
-              mobileBody:Container(),
-              tabletBody: Container(),
-            ),
+          child: ResponsiveLayout(
+            desktopBody: const HomeScreenDesktop(),
+            mobileBody: const HomeScreenMobile(),
+            tabletBody: Container(),
           ),
         ),
       ),

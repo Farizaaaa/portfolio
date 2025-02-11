@@ -27,7 +27,7 @@ class _HomeScreenDesktopState extends State<HomeScreenDesktop> {
         isdeviceWidth < 1315 ? (MediaQuery.of(context).size.width + 194) : 1536;
     double deviceHeight = 729.5;
 
-    String rurl = 'https://farizaaaa.github.io/resume/resume.pdf';
+    
 
     return Center(
       child: ScrollConfiguration(
@@ -57,13 +57,13 @@ class _HomeScreenDesktopState extends State<HomeScreenDesktop> {
                               ),
                             ),
                             AboutBlock(deviceWidth: deviceWidth),
-                            ResumeBlock(rurl: rurl, deviceWidth: deviceWidth),
+                            ResumeBlock(deviceWidth: deviceWidth),
                           ],
                         ),
                         Column(
                           children: [
                             NameBlock(deviceWidth: deviceWidth),
-                            ProfilePhotoBlock(
+                            ProfilePhotoBlockDesktop(
                               deviceWidth: deviceWidth,
                               deviceHeight: deviceHeight,
                             ),
