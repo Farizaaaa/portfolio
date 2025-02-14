@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/components/blocks/contact_me_block.dart';
+import 'package:portfolio/components/blocks/education_block.dart';
+import 'package:portfolio/components/blocks/experience_block.dart';
 import 'package:portfolio/components/blocks/profile_pic_block.dart';
+import 'package:portfolio/components/blocks/projects_block.dart';
 import 'package:portfolio/components/blocks/skills_block.dart';
 import 'package:portfolio/components/custom_backdrop_filter.dart';
 import 'package:portfolio/core/styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreenMobile extends StatefulWidget {
   const HomeScreenMobile({super.key});
@@ -34,76 +39,41 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
             CustomBackdropFilter(
               borderRadius: mobile_containerStyle.borderRadius,
               margin: mobile_containerStyle.margin,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: mobile_containerStyle.color,
-                  borderRadius: mobile_containerStyle.borderRadius,
-                ),
-                padding: const EdgeInsets.only(
-                    left: 16, right: 16, top: 16, bottom: 16),
-                // margin: mobile_containerStyle.margin,
-                width: deviceWidth * mobile_containerStyle.width,
-                // height: deviceHeight * (mobile_containerStyle.height * .9),
-              ),
-            ),
-            //my projects
+                child: SkillsBlockMobile(
+                    deviceWidth: deviceWidth, deviceHeight: deviceHeight)),
             CustomBackdropFilter(
               borderRadius: mobile_containerStyle.borderRadius,
               margin: mobile_containerStyle.margin,
-              child: SkillsBlockMobile(
+              child: ProjectsBlockMobile(
                   deviceWidth: deviceWidth, deviceHeight: deviceHeight),
             ),
-            //My Edu
+            
             CustomBackdropFilter(
               borderRadius: mobile_containerStyle.borderRadius,
               margin: mobile_containerStyle.margin,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: mobile_containerStyle.color,
-                  borderRadius: mobile_containerStyle.borderRadius,
-                ),
-                padding: const EdgeInsets.only(top: 16),
-                // margin: mobile_containerStyle.margin,
-                width: deviceWidth * mobile_containerStyle.width,
-                height: 260,
-              ),
-            ),
-            //my exp
+                child: EducationBlockMobile(
+                    deviceWidth: deviceWidth, deviceHeight: deviceHeight)),
+        
             CustomBackdropFilter(
               borderRadius: mobile_containerStyle.borderRadius,
               margin: mobile_containerStyle.margin,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: mobile_containerStyle.color,
-                  borderRadius: mobile_containerStyle.borderRadius,
-                ),
-                padding: const EdgeInsets.only(top: 16, bottom: 16),
-                // margin: mobile_containerStyle.margin,
-                width: deviceWidth * mobile_containerStyle.width,
-                height: 220,
-              ),
-            ),
-            //contact me
-            GestureDetector(
-              // onTap: () {
-              //   navigateTo(context, const toResponsiveLayout_contactMe());
-              // },
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: CustomBackdropFilter(
-                  borderRadius: mobile_containerStyle.borderRadius,
-                  margin: mobile_containerStyle.margin,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: containerStyle.color,
-                      borderRadius: mobile_containerStyle.borderRadius,
-                    ),
-                    padding: mobile_containerStyle.padding,
-                    // margin: mobile_containerStyle.margin,
-                    width: deviceWidth * mobile_containerStyle.width,
-                    height: 103,
-                  ),
-                ),
+                child: ExperienceBlocMobile(
+                    deviceWidth: deviceWidth, deviceHeight: deviceHeight)),
+            CustomBackdropFilter(
+              borderRadius: mobile_containerStyle.borderRadius,
+              margin: mobile_containerStyle.margin,
+              child: GestureDetector(
+                onTap: () async {
+                  final Uri url =
+                      Uri.parse("https://linkedin.com/in/fariza-a-a-661820253");
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url);
+                  } else {
+                    print('Could not launch $url');
+                  }
+                },
+                child: ContactMeBlockMobile(
+                    deviceWidth: deviceWidth, deviceHeight: deviceHeight),
               ),
             ),
           ],

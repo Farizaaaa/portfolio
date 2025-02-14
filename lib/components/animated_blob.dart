@@ -27,7 +27,7 @@ class AnimatedBlobBackground extends StatefulWidget {
   const AnimatedBlobBackground({
     super.key,
     required this.child,
-    this.numberOfBlobs = 3,
+    this.numberOfBlobs = 5,
     this.gravitationalPull = 1.0,
     this.baseSpeed = 1.0,
     this.blobSizeMultiplier = 0.5,
@@ -35,9 +35,20 @@ class AnimatedBlobBackground extends StatefulWidget {
     List<BlobConfig>? blobConfigs,
   })  : blobConfigs = blobConfigs ??
             const [
-              BlobConfig(colors: [Colors.purple, Colors.transparent]),
-              BlobConfig(colors: [Colors.blue, Colors.transparent]),
-              BlobConfig(colors: [Colors.indigo, Colors.transparent]),
+              BlobConfig(
+                  colors: [Colors.purple, Color.fromARGB(0, 22, 218, 224)]),
+              BlobConfig(
+                  colors: [Colors.blue, Color.fromARGB(0, 22, 218, 224)]),
+              BlobConfig(colors: [
+                Color.fromARGB(255, 176, 69, 39),
+                Color.fromARGB(0, 22, 218, 224)
+              ]),
+              BlobConfig(
+                  colors: [Colors.indigo, Color.fromARGB(0, 22, 218, 224)]),
+              BlobConfig(colors: [
+                Color.fromARGB(255, 206, 229, 27),
+                Color.fromARGB(0, 22, 218, 224)
+              ]),
             ],
         assert(blobConfigs == null || blobConfigs.length >= numberOfBlobs,
             'Must provide at least as many blob configs as number of blobs');
@@ -74,7 +85,7 @@ class _AnimatedBlobBackgroundState extends State<AnimatedBlobBackground>
         duration: Duration(
             milliseconds: (8000 / widget.baseSpeed).round() + index * 2000),
         vsync: this,
-      )..repeat(), // Start immediately with repeat
+      )..repeat(), 
     );
 
     // Tertiary controllers for size pulsing

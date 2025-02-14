@@ -272,3 +272,179 @@ class SkillsBlockMobile extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+//
+
+class SkillsBlockTablet extends StatelessWidget {
+  const SkillsBlockTablet(
+      {super.key, required this.deviceWidth, required this.deviceHeight});
+  final double deviceWidth;
+  final double deviceHeight;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: tablet_containerStyle.color,
+        borderRadius: tablet_containerStyle.borderRadius,
+      ),
+      padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 16),
+      width: deviceWidth * tablet_containerStyle.width,
+      height: tablet_containerStyle.row1,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: AutoSizeText.rich(
+                  maxFontSize: 23,
+                  minFontSize: 5,
+                  maxLines: 1,
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Tech I',
+                        style: GoogleFonts.chakraPetch(
+                            textStyle: textStyles.HeadingI),
+                      ),
+                      TextSpan(
+                        text: ' Love',
+                        style: GoogleFonts.chakraPetch(
+                            textStyle: textStyles.HeadingB),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Icon(
+                color: textStyles.B.color,
+                Icons.lens_blur_rounded,
+                size: deviceWidth < 900
+                    ? tablet_containerStyle.iconSizeS
+                    : tablet_containerStyle.iconSizeL,
+              )
+            ],
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          SizedBox(
+            height: 170,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: deviceWidth * tablet_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[0],
+                          width: deviceWidth * tablet_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * tablet_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[1],
+                          width: deviceWidth * tablet_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * tablet_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[2],
+                          width: deviceWidth * tablet_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * tablet_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[3],
+                          width: deviceWidth * tablet_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * tablet_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[4],
+                          width: deviceWidth * tablet_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * tablet_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[5],
+                          width: deviceWidth * tablet_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: deviceWidth * tablet_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[6],
+                          width: deviceWidth * tablet_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * tablet_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[7],
+                          width: deviceWidth * tablet_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: deviceWidth * tablet_SVGContainer.width,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          skills[8],
+                          width: deviceWidth * tablet_SVGContainer.width,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

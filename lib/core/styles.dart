@@ -6,7 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 int rad = 19;
 int Srad = 10;
 
-Color GlobalColor = const Color.fromARGB(127, 37, 37, 37);
+Color GlobalColor = const Color.fromARGB(111, 101, 101, 101);
+// Color.fromARGB(126, 37, 37, 37);
 Color SecondaryColor = const Color.fromARGB(255, 37, 37, 37);
 Color ResumeColor = const Color.fromARGB(127, 183, 183, 183);
 Color IconHClr = const Color.fromARGB(134, 0, 255, 213);

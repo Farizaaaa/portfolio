@@ -67,12 +67,12 @@ class _HomeScreenDesktopState extends State<HomeScreenDesktop> {
                               deviceWidth: deviceWidth,
                               deviceHeight: deviceHeight,
                             ),
-                            ContactMeBlock(deviceWidth: deviceWidth),
+                            ContactMeBlockDesktop(deviceWidth: deviceWidth),
                           ],
                         ),
                         Column(
                           children: [
-                            ProjectsBlock(
+                            ProjectsBlockDesktop(
                                 deviceWidth: deviceWidth,
                                 deviceHeight: deviceHeight),
                             SkillsBlock(
@@ -82,10 +82,10 @@ class _HomeScreenDesktopState extends State<HomeScreenDesktop> {
                         ),
                         Column(
                           children: [
-                            ExperienceBlock(
+                            ExperienceBlockDesktop(
                                 deviceWidth: deviceWidth,
                                 deviceHeight: deviceHeight),
-                            EducationBlock(
+                            EducationBlockDesktop(
                                 deviceWidth: deviceWidth,
                                 deviceHeight: deviceHeight),
                           ],

@@ -30,13 +30,10 @@ final double deviceHeight;
           decoration: BoxDecoration(
             color: containerStyle.color,
             borderRadius: containerStyle.borderRadius,
-            // image: const DecorationImage(
-            //   image: AssetImage(profilepic),
-            //   fit: BoxFit.fill,
-            // ),
+         
           ),
           padding: containerStyle.padding,
-          // margin: containerStyle.margin,
+         
           width: deviceWidth / 6,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -218,6 +215,201 @@ class ProfilePhotoBlockMobile extends StatelessWidget {
                 //   style: GoogleFonts.chakraPetch(textStyle: textStyles.P1_mobile),
                 //   "Solving complex problems as an engineering student with a love for tech and learning.",
                 // ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+//
+
+class ProfilePhotoBlocTablet extends StatelessWidget {
+  const ProfilePhotoBlocTablet(
+      {super.key, required this.deviceWidth, required this.deviceHeight});
+  final double deviceWidth;
+  final double deviceHeight;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: tablet_containerStyle.color,
+        borderRadius: tablet_containerStyle.borderRadius,
+      ),
+      padding: const EdgeInsets.only(
+        left: 16,
+        right: 16,
+        top: 16,
+      ),
+      width: deviceWidth * tablet_containerStyle.width,
+      height: tablet_containerStyle.row1,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Image.asset(
+                  profilepic,
+                  fit: BoxFit.fitWidth,
+                  width: deviceWidth * 0.14,
+                  alignment: Alignment.topCenter,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            width: deviceWidth * 0.02,
+          ),
+          Expanded(
+            flex: 2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                //name
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                    text: "Nakul",
+                                    style: GoogleFonts.chakraPetch(
+                                        textStyle: textStyles.Name1,
+                                        fontSize: 20)),
+                                TextSpan(
+                                    text: "</Dev>",
+                                    style: GoogleFonts.chakraPetch(
+                                        textStyle: textStyles.Name2,
+                                        fontSize: 20)),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Icon(
+                          color: textStyles.B.color,
+                          Icons.verified_rounded,
+                          size: deviceWidth < 900
+                              ? tablet_containerStyle.iconSizeS
+                              : tablet_containerStyle.iconSizeL,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: deviceHeight * 0.02,
+                    ),
+                    //heading
+                    FittedBox(
+                      fit: BoxFit.contain,
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: "Building the ",
+                              style: GoogleFonts.chakraPetch(
+                                  textStyle: textStyles.B),
+                            ),
+                            TextSpan(
+                              text: "Future",
+                              style: GoogleFonts.chakraPetch(
+                                  textStyle: textStyles.I),
+                            ),
+                            TextSpan(
+                              text: ",\nOne Line of ",
+                              style: GoogleFonts.chakraPetch(
+                                  textStyle: textStyles.B),
+                            ),
+                            TextSpan(
+                              text: "Code",
+                              style: GoogleFonts.chakraPetch(
+                                  textStyle: textStyles.I),
+                            ),
+                            TextSpan(
+                              text: "\nat a Time",
+                              style: GoogleFonts.chakraPetch(
+                                  textStyle: textStyles.B),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () async {
+                      notifySnackBar(context, "Redirecting to resume... ");
+                      final Uri url = Uri.parse(
+                          'https://github.com/Farizaaaa/resume/blob/main/Fariza_A_A.pdf');
+                      if (await canLaunchUrl(url)) {
+                        await launchUrl(url);
+                      } else {
+                        print('Could not launch $url');
+                      }
+                    },
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 99, 99, 99),
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                      ),
+                      padding: const EdgeInsets.all(5),
+                      margin: const EdgeInsets.only(bottom: 16),
+                      width: deviceWidth < 900 ? 100 : 120,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Icon(
+                                color: textStyles.B.color,
+                                Icons.description,
+                                size: tablet_containerStyle.iconSizeL,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                "Resume",
+                                style: GoogleFonts.chakraPetch(
+                                    textStyle: textStyles.B,
+                                    fontSize: kDefaultFontSize),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           )
